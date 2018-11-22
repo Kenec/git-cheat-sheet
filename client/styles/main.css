@@ -1,0 +1,30 @@
+body {
+  background-color: #6d3c3c42;
+}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.header-bg-color {
+  background-color: #220202f1;
+}
+
+.button-blend {
+  border-color: #220202f1;
+  background-color: #220202f1;
+  color: white;
+}
+
+a {
+  color: #220202f1;
+} 
+
+a.bold {
+  font-weight: bold;
+}
+
+.bg {
+  background-color: rgba(139, 93, 79, 0.5);
+}
