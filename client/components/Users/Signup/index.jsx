@@ -1,28 +1,24 @@
-import React, { Component } from 'react';
-import SignupForm from './SignupForm';
+import React from 'react';
 
-class Signup extends Component {
-
-  render() {
+const Signup = () => {
     return (
-        <div className="pt-5">
-          <div className="row">
-            <div className="col-md-3"></div>
-            <div className="col-md-6">
-              <div className="card  p-5 bg">
-                <p className="h3 font-weight-bold"> Register </p>
-                <hr className=""/>
-                <SignupForm />
-                <p className="" >Already have an account? 
-                  <a href="/signin"><b> Signin</b></a>
-                </p>
-              </div>
-            </div>
-          <div className="col-md-3"></div>
+      <form>
+        <div className="form-group">
+          <input type="text" className="form-control" id="username" aria-describedby="username" placeholder="Enter Username"/>
         </div>
-      </div>
-    );
-  }
+        <div className="form-group">
+          <input type="email" className="form-control" id="email" aria-describedby="email" placeholder="Enter Email"/>
+        </div>
+        <div className="form-group">
+          <input type="password" className="form-control" id="password" aria-describedby="password" placeholder="Enter Password"/>
+        </div>
+        <div className="form-group">
+          <input type="password" className="form-control" id="confirmpassword" aria-describedby="confirmpassword" placeholder="Confirm Password"/>
+        </div>
+        <button type="submit" className="btn button-blend">Submit</button>
+        <hr className="hr-light"/>
+    </form>
+  );
 }
 
 export default Signup;
