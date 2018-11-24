@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import Users from './Users';
+import Profile from './Profile'
 import NotFound from './NotFound';
 
 import '../styles/main.css';
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path="/" component={Users} />
             <Route path="/signin" component={Users} />
             <Route path="/signup" component={Users} />
+            <Route path="/profile" component={Profile} />
             <Route component={NotFound} />
           </Switch>
         </div>
