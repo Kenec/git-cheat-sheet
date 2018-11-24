@@ -25,6 +25,30 @@ a.bold {
   font-weight: bold;
 }
 
+a.links {
+  color: white;
+}
+
 .bg {
   background-color: rgba(139, 93, 79, 0.5);
+}
+
+.display-auth {
+  display: table;
+}
+
+.name-display {
+  display: table-cell;
+  padding-right: 10px;
+  color: white;
+  font-style: italic;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.card {
+  margin: 1px;
 }
