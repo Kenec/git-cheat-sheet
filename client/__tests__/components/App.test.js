@@ -6,6 +6,6 @@ describe('<App />', () => {
 
   const wrapper = mount(<App />);
   it('should display the App contents', () => {
-    expect(wrapper.find('div').at(0).text()).toEqual('Hello World');
+    expect(wrapper.find('div').at(0).length).toEqual(1);
   });
 });

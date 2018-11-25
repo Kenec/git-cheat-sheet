@@ -1,0 +1,68 @@
+body {
+  background-color: #6d3c3c42;
+}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.header-bg-color {
+  background-color: #220202f1;
+}
+
+.button-blend {
+  border-color: #220202f1;
+  background-color: #220202f1;
+  color: white;
+}
+
+a {
+  color: #220202f1;
+} 
+
+a.bold {
+  font-weight: bold;
+}
+
+a.links {
+  color: white;
+}
+
+.bg {
+  background-color: rgba(139, 93, 79, 0.5);
+}
+
+.display-auth {
+  display: table;
+}
+
+.name-display {
+  display: table-cell;
+  padding-right: 10px;
+  color: white;
+  font-style: italic;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.card {
+  margin: 1px;
+}
+
+.add-cheat {
+  background-color: white;
+  min-height: 50vh
+}
+
+.custom-h4 {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn-round {
+  border-radius: 50%;
+}
