@@ -52,3 +52,17 @@ a.links {
 .card {
   margin: 1px;
 }
+
+.add-cheat {
+  background-color: white;
+  min-height: 50vh
+}
+
+.custom-h4 {
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn-round {
+  border-radius: 50%;
+}
