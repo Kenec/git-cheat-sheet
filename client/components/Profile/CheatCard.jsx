@@ -11,7 +11,8 @@ const CheatCard = () =>
       <a href="#" className="btn btn-primary">Go somewhere</a>
     </div>
     <div className="card-footer text-muted">
-      2 days ago
+      <i className="fas fa-edit float-left"></i>
+      <i className="fas fa-trash-alt float-right"></i>
     </div>
   </div>
 

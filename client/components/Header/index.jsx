@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
 
@@ -13,10 +14,11 @@ class Header extends Component {
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
         </ul>
         <div className="row mr-1 display-auth">
-          <a className="mr-5 links bold" href="">| Manage Cheats |</a>
+          <NavLink className="mr-4 links bold" to="/profile">Home</NavLink>
+          <NavLink className="mr-5 links bold" to="/profile/manage-cheat">Add Cheat</NavLink>
           <div className="white mr-2 name-display">Welcome Kene!</div>
           <div>
-            <button className="btn btn-default">Logout</button>
+            <button className="btn btn-outline-warning">Logout</button>
           </div>
         </div>
       </div>
