@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Search from '../Search';
 import CheatCard from './CheatCard';
 
@@ -9,20 +10,19 @@ class Profile extends Component {
       <div className="container mt-3">
         <Search />
         <div className="grid-container">
-          <CheatCard />
-          <CheatCard />
-          <CheatCard />
-          <CheatCard />
-          <CheatCard />
-          <CheatCard />
-          <CheatCard />
-          <CheatCard />
-          <CheatCard />
-          <CheatCard />          
+          {
+            this.props.gitCheats.map((gitCheat, index) => {
+              return <CheatCard key={index} id={gitCheat.id} gitCheat={gitCheat} />  
+            })
+          }       
         </div>
       </div>
     );
   }
 };
 
-export default Profile;
+const mapStateToProps = state => ({
+  gitCheats: state.gitCheats
+});
+
+export default connect(mapStateToProps)(Profile);
