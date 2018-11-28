@@ -46,11 +46,15 @@ a.links {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 25% 25% 25% 25%;
 }
 
 .card {
   margin: 1px;
+}
+
+.card-custom {
+  height: 15em;
 }
 
 .add-cheat {
@@ -65,4 +69,18 @@ a.links {
 
 .btn-round {
   border-radius: 50%;
+}
+
+.card-header {
+  background-color: rgba(139, 93, 79, 0.9);
+  color: white;
+  font-weight: bold;
+}
+
+.card-body {
+  overflow-y: scroll;
+}
+
+.command-code {
+  cursor: copy;
 }
