@@ -1,12 +1,21 @@
 import React from 'react';
 
-const Profile = () =>
+const Search = ({ searchText, handleOnChange, handleOnSearch }) =>
     <div className="">
       <form>
         <div className="form-group">
-          <input type="text" className="form-control" id="gitcheats" aria-describedby="gitcheats" placeholder="Search Sheets"/>
+          <input
+            value={searchText}
+            onChange={handleOnChange}
+            onKeyUp={() => handleOnSearch(searchText)}
+            type="text" 
+            className="form-control" 
+            id="gitcheats" 
+            aria-describedby="gitcheats" 
+            placeholder="Search Sheets"
+          />
         </div>
       </form>
     </div>
  
-export default Profile;
+export default Search;
