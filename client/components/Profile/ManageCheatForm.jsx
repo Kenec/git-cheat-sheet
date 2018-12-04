@@ -10,12 +10,9 @@ class ManageCheatForm extends Component {
 
   handleChange = event => {
     if (event.target.id === 'cheatTitle') {
-      this.setState({ 
-        cheatTitle: event.target.value
-      });
+      this.setState({ cheatTitle: event.target.value });
     } else {
-      const newCheatInputs = this.state.cheatInputs
-
+      const newCheatInputs = [...this.state.cheatInputs]
       newCheatInputs[event.target.id][event.target.name] = event.target.value;
       this.setState({ cheatInputs: newCheatInputs });
     }
