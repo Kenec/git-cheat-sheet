@@ -6,7 +6,7 @@ class Signin extends Component {
     return (
       <form>
         <div className="form-group">
-          <input type="text" className="form-control" id="username" aria-describedby="username" placeholder="Enter Username"/>
+          <input type="email" className="form-control" id="email" aria-describedby="email" placeholder="Enter Email"/>
         </div>
         <div className="form-group">
           <input type="password" className="form-control" id="password" aria-describedby="password" placeholder="Enter Password"/>
