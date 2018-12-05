@@ -8,7 +8,9 @@ export default {
    * @param {object} res 
    */
   getCheats(req, res) {
-    res.status(200).send({ message: 'You have successfuly gotten all the cheats!!' })
+    Cheat.find({}, (error, cheats) => {
+      if (error) return res.status(500).send({ error: 'Error while fetching cheats!' });
+      return res.status(200).send({ cheats })
+    });
   }
-  
 }
