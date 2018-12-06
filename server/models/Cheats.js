@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const CheatSchema = mongoose.Schema({
   owner: {
-    type: Number,
+    type: String,
     required: true
   },
   title: {
