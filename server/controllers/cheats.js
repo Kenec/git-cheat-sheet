@@ -10,7 +10,7 @@ export default {
   getCheats(req, res) {
     Cheat.find({}, (error, cheats) => {
       if (error) return res.status(500).send({ error: 'Error while fetching cheats!' });
-      return res.status(200).send({ cheats })
+      return res.status(200).send({ cheats });
     });
   },
 
@@ -21,7 +21,7 @@ export default {
    */
   addCheat(req, res) {
     const { owner, title, detail } = req.body;
-    const newCheat =  new Cheat({ owner, title, detail })
+    const newCheat =  new Cheat({ owner, title, detail });
     newCheat.save(error => {
       if (error) return res.status(500).send(error);
       return res.status(200).send({ id: newCheat.id, owner, title, detail });
@@ -41,9 +41,21 @@ export default {
       cheat.detail = req.body.detail || cheat.detail;
 
       cheat.save(error => {
-        if (error) return res.status(500).send({ error: 'Error occured while updating cheat!' })
+        if (error) return res.status(500).send({ error: 'Error occured while updating cheat!' });
         return res.status(200).send({ id: cheat.id, owner: cheat.owner, title: cheat.title, detail: cheat.detail });
       });
+    });
+  },
+
+  /**
+   * deleteCheat - delete cheat
+   * @param {object} req 
+   * @param {object} res 
+   */
+  deleteCheat(req, res) {
+    Cheat.deleteOne({ _id: req.params.id }, error => {
+      if (error) return res.status(500).send({ error: 'Error occured while deleting cheat!' });
+      return res.status(200).send({ message: 'Cheat Deleted!' });
     });
   }
 }

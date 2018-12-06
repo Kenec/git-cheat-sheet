@@ -8,5 +8,6 @@ cheatRoutes
   .get('/', cheatController.getCheats)
   .post('/', cheatController.addCheat)
   .put('/:id', cheatController.editCheat)
+  .delete('/:id', cheatController.deleteCheat)
 
 export default cheatRoutes;
