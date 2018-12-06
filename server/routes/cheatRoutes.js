@@ -7,5 +7,6 @@ const cheatRoutes = express.Router();
 cheatRoutes
   .get('/', cheatController.getCheats)
   .post('/', cheatController.addCheat)
+  .put('/:id', cheatController.editCheat)
 
 export default cheatRoutes;
