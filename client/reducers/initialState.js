@@ -1,5 +1,8 @@
 export default {
-  users: {},
+  user: {
+    isAuthenticated: false,
+    user: {}
+  },
   gitCheats: [
     { id: 1,
       owner: 0,
