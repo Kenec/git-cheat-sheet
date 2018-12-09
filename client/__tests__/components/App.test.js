@@ -1,10 +1,14 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import App from '../../components/App';
+import { mount, shallow } from 'enzyme';
+import { App } from '../../components/App';
 
 describe('<App />', () => {
 
-  const wrapper = mount(<App />);
+  const props = {
+
+  };
+
+  const wrapper = shallow(<App />);
   it('should display the App contents', () => {
     expect(wrapper.find('div').at(0).length).toEqual(1);
   });

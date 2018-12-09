@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
-import users from './usersReducer';
+import user from './usersReducer';
 import gitCheats from './gitCheatsReducer';
+import error from './errorReducer';
 
 const rootReducer = combineReducers({
-  users,
+  user,
+  error,
   gitCheats
 });
 

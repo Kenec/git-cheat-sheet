@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   res.status(200).send({ message: 'Welcome to the Git Cheat API' });
 });
 
-router.use('/v1/', userRoutes);
+router.use('/v1/users/', userRoutes);
 router.use('/v1/gitcheats/', cheatRoutes);
 
 router.get('*', (req, res) => {

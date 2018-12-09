@@ -7,7 +7,6 @@ const Search = ({ searchText, handleOnChange, handleOnSearch }) =>
           <input
             value={searchText}
             onChange={handleOnChange}
-            onKeyUp={() => handleOnSearch(searchText)}
             type="text" 
             className="form-control" 
             id="gitcheats" 
