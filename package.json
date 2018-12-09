@@ -4,7 +4,7 @@
   "description": "Git Cheat Sheet using MongoDB + Express + React + NodeJS",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all build start:prod",
+    "start": "npm-run-all build",
     "start:prod": "node dist/index.js",
     "start:dev": "babel-node server/index.js",
     "test:client": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
