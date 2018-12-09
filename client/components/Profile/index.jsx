@@ -19,10 +19,6 @@ class Profile extends Component {
     this.setState({ searchText: event.target.value })
   };
 
-  handleOnSearch = searchValue => {
-    this.props.gitCheatsActions.searchCheats(searchValue)
-  };
-
   render() {
     const { user } = this.props;
     return (
@@ -34,7 +30,9 @@ class Profile extends Component {
         />
         <div className="grid-container">
           {
-            this.props.gitCheats.map((gitCheat, index) => {
+            this.props.gitCheats
+            .filter(gitCheat => gitCheat.title.toLowerCase().includes(this.state.searchText.toLowerCase()))
+            .map((gitCheat, index) => {
               return <CheatCard key={index} id={gitCheat.id} user={user} gitCheat={gitCheat} />  
             })
           }       

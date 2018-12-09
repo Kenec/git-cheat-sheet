@@ -6,9 +6,6 @@ export default function gitCheatsReducer(state = initialState.gitCheats, action)
     case types.GET_ALL_CHEATS:
       return action.gitCheats;
 
-    case types.SEARCH_CHEATS:
-      return action.gitCheats;
-
     case types.ADD_CHEAT:
       return [...state, Object.assign({}, action.gitCheat)];
 

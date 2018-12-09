@@ -16,8 +16,8 @@ const CheatCard = ({ gitCheat, user }) =>
           }
         </div>
       <div className="card-footer text-muted">
-        <i className="fas fa-edit float-left"></i>
-        <i className="fas fa-trash-alt float-right"></i>
+        {/* <i className="fas fa-edit float-left"></i> */}
+        {/* <i className="fas fa-trash-alt float-right"></i> */}
       </div>
     </div>
 
