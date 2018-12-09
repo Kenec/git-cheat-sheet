@@ -9,7 +9,7 @@
     "test:client": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
     "clean-dist": "npm run remove-dist && mkdir dist",
-    "build:client": "babel-node tools/buildHtml.js",
+    "build:client": "babel-node ./tools/buildHtml.js",
     "build:server": "babel ./server --out-dir dist/ --copy-files",
     "prebuild": "npm-run-all clean-dist build:client build:server",
     "build": "babel-node ./tools/build.js"
