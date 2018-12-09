@@ -1,4 +1,5 @@
 export default {
+  error:{},
   user: {
     isAuthenticated: false,
     user: {}
@@ -26,19 +27,19 @@ export default {
       ]
     },
     { id: 4,
-      owner: 1, 
+      owner: 0, 
       title: 'Custom Git Owner 1',
       detail: [ 
-          { description: 'Description 1', command: 'git custom 1' }, 
-          { description: 'Description 2', command: 'git custom 2' },
-          { description: 'Description 3', command: 'git custom 3' },
-          { description: 'Description 4', command: 'git custom 4' }, 
-          { description: 'Description 5', command: 'git custom 5' },
-          { description: 'Description 6', command: 'git custom 6' } 
+          { desc: 'Description 1', command: 'git custom 1' }, 
+          { desc: 'Description 2', command: 'git custom 2' },
+          { desc: 'Description 3', command: 'git custom 3' },
+          { desc: 'Description 4', command: 'git custom 4' }, 
+          { desc: 'Description 5', command: 'git custom 5' },
+          { desc: 'Description 6', command: 'git custom 6' } 
       ]
     },
-    { id: 4,
-      owner: 2, 
+    { id: 5,
+      owner: 0, 
       title: 'Custom Git Owner 2',
       detail: [ 
           { description: 'Description 1', command: 'git custom 1' }, 

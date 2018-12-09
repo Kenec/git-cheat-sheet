@@ -8,7 +8,7 @@ export default {
    * @param {object} res 
    */
   getCheats(req, res) {
-    Cheat.find({}, (error, cheats) => {
+    Cheat.find({ $or: [{ owner: "0" }, { owner: req.authToken.id }] }, (error, cheats) => {
       if (error) return res.status(500).send({ error: 'Error while fetching cheats!' });
       return res.status(200).send({ cheats });
     });
@@ -21,10 +21,20 @@ export default {
    */
   addCheat(req, res) {
     const { owner, title, detail } = req.body;
-    const newCheat =  new Cheat({ owner, title, detail });
-    newCheat.save(error => {
-      if (error) return res.status(500).send(error);
-      return res.status(200).send({ id: newCheat.id, owner, title, detail });
+    Cheat.find({
+      $or: [
+        { $and: [{ title }, { owner: "0" }]},
+        { $and: [{ title }, { owner: req.authToken.id }]}
+      ]
+    }, (error, cheat) => {
+      if (error) return res.statu(500).send(error);
+      if (cheat.length > 0) return res.status(409).send({ message: 'Cheat Already Exists!' });
+
+      const newCheat =  new Cheat({ owner, title, detail });
+      newCheat.save(error => {
+        if (error) return res.status(500).send(error);
+        return res.status(200).send({ id: newCheat.id, owner, title, detail });
+      });
     });
   },
 

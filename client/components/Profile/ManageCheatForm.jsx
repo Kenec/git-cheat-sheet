@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import toastr from 'toastr';
 import CheatInputs from './CheatInputs';
+import { addCheats } from '../../actions/gitCheatsAction';
 
-class ManageCheatForm extends Component {
+export class ManageCheatForm extends Component {
   state = {
     cheatTitle: '',
-    cheatInputs: [ {id: 1, desc: '', command: ''} ]
+    cheatInputs: [ {id: 1, desc: '', command: ''} ],
+    error: ''
   };
 
   handleChange = event => {
@@ -16,6 +19,29 @@ class ManageCheatForm extends Component {
       newCheatInputs[event.target.id][event.target.name] = event.target.value;
       this.setState({ cheatInputs: newCheatInputs });
     }
+  };
+
+  handleAddCheat = event => {
+    event.preventDefault();
+    const { cheatTitle, cheatInputs } = this.state;
+    const { user } = this.props.user;
+    this.props.addCheats({ 
+        owner: user.id, 
+        title: cheatTitle, 
+        detail: cheatInputs
+    })
+    .then (
+      () => { this.setState({
+          cheatTitle: '',
+          cheatInputs: [ {id: 1, desc: '', command: ''} ],
+          error: ''
+        });
+      },
+      ({ response }) => { 
+        toastr.error(response.data.message);
+        this.setState({ error: response.data.message });
+      }
+    ) 
   };
 
   isFieldsEmpty = () => {
@@ -33,7 +59,8 @@ class ManageCheatForm extends Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleAddCheat}>
+        <span className="text-danger"><b>{ this.state.error && this.state.error }</b></span>
         <div className="form-group">
           <label htmlFor="cheatTitle" className="col-form-label">Cheat Title</label>
           <div className="">
@@ -44,6 +71,7 @@ class ManageCheatForm extends Component {
               className="form-control" 
               id="cheatTitle" 
               placeholder="Cheat Title eg: Install GIT"
+              required
             />
           </div>
         </div>
@@ -62,4 +90,13 @@ class ManageCheatForm extends Component {
   }
 }
 
-export default ManageCheatForm;
+const mapStateToProps = state => ({
+  user: state.user,
+  error: state.error
+});
+
+const mapDispatchToProps = {
+  addCheats
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ManageCheatForm);

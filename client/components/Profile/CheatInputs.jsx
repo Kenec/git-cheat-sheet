@@ -13,6 +13,7 @@ const CheatInputs = ({ handleChange, inputValue, index }) => (
           type="text" 
           className="form-control" 
           placeholder="Cheat Description"
+          required
         />
       </div>
     </div>
@@ -28,6 +29,7 @@ const CheatInputs = ({ handleChange, inputValue, index }) => (
           type="text" 
           className="form-control" 
           placeholder="Cheat Command eg: brew install git"
+          required
         />
       </div>
     </div>

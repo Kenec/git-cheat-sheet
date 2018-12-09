@@ -11,6 +11,10 @@ class Profile extends Component {
     searchText: ''
   };
 
+  componentDidMount() {
+    this.props.gitCheatsActions.getCheats();
+  }
+
   handleOnChange = event => {
     this.setState({ searchText: event.target.value })
   };
@@ -20,6 +24,7 @@ class Profile extends Component {
   };
 
   render() {
+    const { user } = this.props;
     return (
       <div className="container mt-3">
         <Search
@@ -30,7 +35,7 @@ class Profile extends Component {
         <div className="grid-container">
           {
             this.props.gitCheats.map((gitCheat, index) => {
-              return <CheatCard key={index} id={gitCheat.id} gitCheat={gitCheat} />  
+              return <CheatCard key={index} id={gitCheat.id} user={user} gitCheat={gitCheat} />  
             })
           }       
         </div>
@@ -40,7 +45,8 @@ class Profile extends Component {
 };
 
 const mapStateToProps = state => ({
-  gitCheats: state.gitCheats
+  gitCheats: state.gitCheats,
+  user: state.user
 });
 
 const mapDispatchToProps = dispatch => ({
