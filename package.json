@@ -4,8 +4,7 @@
   "description": "Git Cheat Sheet using MongoDB + Express + React + NodeJS",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all build start:prod",
-    "start:prod": "node dist/index.js",
+    "start": "node dist/index.js",
     "start:dev": "babel-node server/index.js",
     "test:client": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
@@ -13,7 +12,7 @@
     "build:client": "babel-node ./tools/buildHTML.js",
     "build:server": "babel ./server --out-dir dist/ --copy-files",
     "prebuild": "npm-run-all clean-dist build:client build:server",
-    "build": "babel-node ./tools/build.js"
+    "heroku-postbuild": "babel-node ./tools/build.js"
   },
   "repository": {
     "type": "git",
