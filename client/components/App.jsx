@@ -9,7 +9,7 @@ import Authenticate from '../utils/authenticate';
 
 import '../styles/main.css';
 
-class App extends Component {
+export class App extends Component {
 
   render() {
     return (
