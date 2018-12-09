@@ -1,12 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
+const nodeExternals = require('webpack-node-externals');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 dotenv.config();
 
 module.exports = {
   mode: "production",
+  target: 'node', // in order to ignore built-in modules like path, fs, etc. 
+  externals: [nodeExternals()],
   entry: path.resolve(__dirname, './client/app/Client.jsx'), 
   output: {
     path: path.resolve('dist'),
