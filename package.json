@@ -61,6 +61,8 @@
     "style-loader": "^0.23.1",
     "toastr": "^2.1.4",
     "webpack": "^4.26.0",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-hot-middleware": "^2.24.3",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
