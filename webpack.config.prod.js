@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 const nodeExternals = require('webpack-node-externals');
@@ -49,6 +50,10 @@ module.exports = {
   resolve: {
     modules: [ "node_modules" ],
     extensions: [".js", ".json", ".jsx", ".css"],
+  },
+  node: {
+    __filename: true,
+    __dirname: true
   },
   devtool: "source-map",
   context: __dirname,
