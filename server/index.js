@@ -11,7 +11,6 @@ import webpackProdConfig from '../webpack.config.prod';
 import routes from './routes';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
 let compiler, connectionString;
 
@@ -57,6 +56,4 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-app.listen(PORT || 3000, () => {
-  console.log(`App started on PORT ${PORT}`)
-});
+app.listen(process.env.PORT || 3000);

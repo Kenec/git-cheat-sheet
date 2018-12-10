@@ -69,6 +69,6 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
-app.listen(PORT, function () {
+app.listen(PORT || 3000, function () {
   console.log("App started on PORT ".concat(PORT));
 });
