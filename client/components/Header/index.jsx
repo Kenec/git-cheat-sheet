@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import * as logoutAction from '../../actions/usersAction';
 
-class Header extends Component {
+export class Header extends Component {
 
   handleLogout = event => {
     event.preventDefault();

@@ -6,7 +6,7 @@ import Search from '../Search';
 import CheatCard from './CheatCard';
 import * as gitCheatsActions from '../../actions/gitCheatsAction';
 
-class Profile extends Component {
+export class Profile extends Component {
   state = {
     searchText: ''
   };
